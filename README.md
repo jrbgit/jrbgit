@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="60" height="60" src="https://avatars.githubusercontent.com/u/2849289?v=4" />
+    <a href="https://app.daily.dev/jr00t"><img src="https://api.daily.dev/devcards/d98ea71c69d04ac7a3fe151fa8ca85da.png?r=3o7" width="400" alt="jr00t's Dev Card"/></a>
   <br>
   <h3>Hi, I'm John a.k.a. jr00t!</h3>
   <p>
