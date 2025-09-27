@@ -1,9 +1,508 @@
-<html>
-	<head>
-	</head>
-	<body>
-		<h1>Please Standy By</h1>
-		<p>jrbgit a.k.a jr00t will be right back!</p>
-	</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Robert Bussiculo - CEO & Tech Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(46, 158, 247, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .greeting {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #2e9ef7, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+
+        .typing-text {
+            font-size: 1.5rem;
+            color: #2e9ef7;
+            margin-bottom: 3rem;
+            min-height: 50px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #2e9ef7, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+
+        .highlight {
+            color: #2e9ef7;
+            font-weight: 600;
+        }
+
+        /* Code Block */
+        .code-container {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 600px;
+            border: 1px solid rgba(46, 158, 247, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .code-block {
+            font-family: 'Courier New', monospace;
+            color: #e8e8e8;
+            font-size: 1rem;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .code-keyword {
+            color: #ff79c6;
+        }
+
+        .code-string {
+            color: #f1fa8c;
+        }
+
+        .code-property {
+            color: #50fa7b;
+        }
+
+        .code-comment {
+            color: #6272a4;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            padding: 100px 0;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tech-item {
+            background: rgba(46, 158, 247, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(46, 158, 247, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-10px);
+            background: rgba(46, 158, 247, 0.2);
+            box-shadow: 0 20px 40px rgba(46, 158, 247, 0.2);
+        }
+
+        .tech-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(46, 158, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(46, 158, 247, 0.1);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: #2e9ef7;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #2e9ef7, #00d4ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(46, 158, 247, 0.3);
+        }
+
+        .contact-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(46, 158, 247, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            background: #2e9ef7;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .greeting {
+                font-size: 2.5rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .typing-text {
+                font-size: 1.2rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particle" style="top: 10%; left: 10%; width: 4px; height: 4px; animation-delay: 0s;"></div>
+    <div class="particle" style="top: 20%; left: 80%; width: 6px; height: 6px; animation-delay: 2s;"></div>
+    <div class="particle" style="top: 60%; left: 20%; width: 3px; height: 3px; animation-delay: 4s;"></div>
+    <div class="particle" style="top: 80%; left: 70%; width: 5px; height: 5px; animation-delay: 1s;"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="greeting">👋</div>
+                <h1 class="name">Hey, I'm John Robert Bussiculo</h1>
+                <p class="subtitle">(aka jr00t) [jrbgit]</p>
+                <div class="typing-text" id="typingText"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">🚀 About Me</h2>
+            <div class="about-content fade-in">
+                <p>I'm a <span class="highlight">builder, teacher, and explorer</span> in tech. By day, I lead as <span class="highlight">CEO of <a href="https://graphlinq.io" style="color: #2e9ef7; text-decoration: none;">GraphLinq Chain</a></span> — a no-code automation platform for blockchain and beyond. By night, I experiment with <span class="highlight">data fetchers, bots, Unity game dev, and home automation projects</span>.</p>
+                
+                <p style="margin-top: 2rem;">I love creating tools that remove barriers and make powerful tech accessible to everyone.</p>
+            </div>
+
+            <div class="code-container fade-in">
+                <div class="code-block">
+<span class="code-keyword">const</span> jr00t = {
+    <span class="code-property">code</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"JavaScript"</span>, <span class="code-string">"C#"</span>, <span class="code-string">"Solidity"</span>, <span class="code-string">"SQL"</span>],
+    <span class="code-property">passions</span>: [<span class="code-string">"Web3"</span>, <span class="code-string">"Automation"</span>, <span class="code-string">"APIs"</span>, <span class="code-string">"Game Dev"</span>, <span class="code-string">"Data Analytics"</span>],
+    <span class="code-property">currentlyBuilding</span>: <span class="code-string">"GraphLinq tools, bots, and personal projects"</span>,
+    <span class="code-property">exploring</span>: <span class="code-string">"Unity + Game Development 🎮"</span>,
+    <span class="code-property">trading</span>: <span class="code-string">"Crypto & stocks (Fidelity Active Trader Pro)"</span>,
+    <span class="code-property">funFact</span>: <span class="code-string">"I'd rather build something real than chase 'When Binance?' hype."</span>
+};
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="section-title fade-in">🛠️ Tech Stack & Passions</h2>
+            <div class="tech-grid">
+                <div class="tech-item fade-in">
+                    <div class="tech-icon">🐍</div>
+                    <h3>Python</h3>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-icon">⚡</div>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-icon">💎</div>
+                    <h3>C#</h3>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-icon">🔗</div>
+                    <h3>Solidity</h3>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-icon">🗃️</div>
+                    <h3>SQL</h3>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-icon">🎮</div>
+                    <h3>Unity</h3>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-icon">🤖</div>
+                    <h3>Automation</h3>
+                </div>
+                <div class="tech-item fade-in">
+                    <div class="tech-icon">📊</div>
+                    <h3>Analytics</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">🎯 Current Focus</h2>
+            <div class="project-card fade-in">
+                <h3 class="project-title">🔗 GraphLinq Chain</h3>
+                <p>Leading as CEO of a revolutionary no-code automation platform that bridges blockchain with real-world applications. Making Web3 accessible to everyone.</p>
+            </div>
+            <div class="project-card fade-in">
+                <h3 class="project-title">🎮 Unity Game Development</h3>
+                <p>Exploring game development with Unity, combining creativity with technical skills to build engaging interactive experiences.</p>
+            </div>
+            <div class="project-card fade-in">
+                <h3 class="project-title">🤖 Bots & Automation</h3>
+                <p>Building data fetchers, trading bots, and home automation systems that make life easier and more efficient.</p>
+            </div>
+            <div class="project-card fade-in">
+                <h3 class="project-title">📈 Trading & Analytics</h3>
+                <p>Active in crypto and stock markets using Fidelity Active Trader Pro, combining technical analysis with automated tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">🤝 Let's Connect</h2>
+            <p class="fade-in">Ready to build something amazing together?</p>
+            <div class="contact-links fade-in">
+                <a href="https://github.com/jrbgit" class="contact-link">GitHub</a>
+                <a href="https://graphlinq.io" class="contact-link">GraphLinq</a>
+                <a href="mailto:contact@jrbgit.dev" class="contact-link">Email</a>
+                <a href="#" class="contact-link">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Typing animation
+        const texts = [
+            "Welcome to my GitHub!",
+            "CEO of GraphLinq Chain",
+            "Web3 & Automation Builder", 
+            "Breaking barriers in Blockchain",
+            "Teaching & Building Every Day"
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typingText');
+        
+        function typeText() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(typeText, typeSpeed);
+        }
+        
+        // Start typing animation
+        typeText();
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add hover effects to tech items
+        document.querySelectorAll('.tech-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.05)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
